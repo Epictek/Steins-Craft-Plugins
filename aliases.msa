@@ -1,0 +1,36 @@
+*:/home = >>>
+  if (plevel(player()) > 4){
+	  set_plevel(player(), plevel(player()) - 5 )
+	  run('/home')
+  } else {
+    msg('You need'  5 - plevel(player()) 'more levels to use this command!')
+  }
+<<<
+
+/homes = call_alias('/home')
+/home $ = call_alias('/home')
+
+
+*:/spawn = >>>
+  if (plevel(player()) > 4){
+	  set_plevel(player(), plevel(player()) - 5 )
+	  run('/spawn')
+  } else {
+    msg('You need'  5 - plevel(player()) 'more levels to use this command!')
+  }
+<<<
+
+~donator:/tag $tag = >>>
+    assign(@player,player())
+    if (reg_count('(?i)(admin|mod)', to_lower($tag)) > 0 && !has_permission("group.mods")){
+        msg("You used a ban word in your tag. Try something else :)")
+    } else {
+	if(length($tag) > 10){
+            msg("Max tag name is 10... B-baka!!!")
+	} else {
+	    runas(~console, "/lp user ". @player ." meta removeprefix 1")
+	    runas(~console, "/lp user ". @player ." meta addprefix 1 &6". $tag."&r|&f")
+            msg(colorize("Your tag has been set to: &6". $tag."&r|&f"))
+    	}
+     }
+<<
