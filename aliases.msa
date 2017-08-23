@@ -35,7 +35,7 @@
      }
 <<<
 
-*:/shrug $message = >>>
+*:/shrug [$message=''] = >>>
     @full_message = concat(trim($message), " ", "\u00AF\\_(\u30C4)_/\u00AF")
     try(chat(@full_message), run(concat("/say", " ", @full_message)))
 <<<
