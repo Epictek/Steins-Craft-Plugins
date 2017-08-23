@@ -33,4 +33,8 @@
             msg(colorize("Your tag has been set to: &6". $tag."&r|&f"))
     	}
      }
-<<
+<<<
+
+~donator:/shrug $message = >>>
+  try(chat(concat("¯\_(ツ)_/¯ ", $message)), msg("Error while running this command!"))
+<<<
