@@ -36,5 +36,6 @@
 <<<
 
 ~donator:/shrug $message = >>>
-  try(chat(concat("¯\_(ツ)_/¯ ", $message)), msg("Error while running this command!"))
+    @full_message = concat(trim($message), " ", "\u00AF\\_(\u30C4)_/\u00AF")
+    try(chat(@full_message), run(concat("/say", " ", @full_message)))
 <<<
